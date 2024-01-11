@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <title>Code Closed</title>
+  </head>
+  <body style="background-color:#4876a3;">
+    <div class="background_img-1">
+      <div class="header">
+        <a href="/dashboard"
+          ><img src="css/images/Cab-Sharing.svg" alt="" class="logo"
+        /></a>
+        <nav>
+          <ul>
+          </ul>
+        </nav>
+        <a href="/profile"><button class="btn" id="btn2">Profile</button></a>
+        <a href="/logout"><button class="btn" id="btn1">Log out</button></a>
+      </div>
+    </div>
+    <div id="Result">
+    <div class="request-list">
+      <% for(const journeyData of data){%>        
+        <div class="card">
+          <div class="container">
+            <h1 style = "color:black"><%=journeyData.email%></h1>
+            <p style = "color:black"> Rate per Km: <%=journeyData.rate%></p> 
+            <p style = "color:black">Available: <%=journeyData.Available%></p> 
+            <p style = "color:black"> Phone Number : <%=journeyData.phone_no%> </p>
+            <p style = "color:black"> Number plate: <%=journeyData.Numberplate%></p>
+          <form action="/driver" method="post">
+            <input
+              type="hidden"
+              name="journeyID"
+              value="<%=journey%>"
+            />
+            <input
+              type="hidden"
+              name="id"
+              value="<%=journeyData._id%>"
+            />
+            <button class = "btn" id = "btn1" type="submit" name="response" >Book</button>
+          </form>
+        </div>
+        </div><br>
+      <% } %>
+    </div>
+  </div>
+  </body>
+</html>
