@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <title>Request</title>
+  </head>
+  <body style="background-color:#4876a3;">
+    <div class="background_img-1">
+      <div class="header">
+        <a href="/"
+          ><img src="css/images/Cab-Sharing.svg" alt="" class="logo"
+        /></a>
+        <nav>
+          <ul>
+
+          </ul>
+        </nav>
+        <a href="/profile"><button class="btn" id="btn2">Profile</button></a>
+        <a href="/logout"><button class="btn" id="btn1">Log out</button></a>
+      </div>
+    </div>
+<div id = "Result">
+    <div class="request-list">
+      <% isEmpty = true; %> 
+      <% for(const journeyData of journeyDataArr){%>
+        <% for(const requester of journeyData.pending){ %>
+          <div class="card">
+            <div class="container">
+         <h2 style = "color:black"><%=requester%> </h2><p style ="color:black"> has requested you for share the cab for
+          <%=journeyData.origin%> to <%=journeyData.destination%> on date <%=journeyData.Departuredate%> at <%=journeyData.time%>  </p>
+          <form action="/request" method="post">
+            <input
+              type="hidden"
+              name="journeyID"
+              value="<%=journeyData._id%>"
+            />
+            <input type="hidden" name="Noof" value="<%=journeyData.Noof%>" />
+            <input type="hidden" name="requesterEmail" value="<%=requester%>" />
+            <button class="btn" id="btn4" type="submit" name="response" value="accept">ACCEPT</button>
+            <button class="btn" id="btn3" type="submit" name="response" value="reject">REJECT</button>
+          </form>
+        </div>
+      </div><br>
+        <% isEmpty=false;} %>
+      <% } %>
+
+      <% if(isEmpty) {%>
+        <div class="container">
+        <h2  style="color: black; text-align: center; font-size: 200%;">You don't have any request</h2>
+        <img class="gif-messages" src="css/images/imsorry.gif" alt="">
+        </div>
+      <%}%> 
+  </div>
+  </body>
+</html>
