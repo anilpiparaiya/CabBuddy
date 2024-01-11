@@ -1,11 +1,45 @@
 {
   "name": "cabbuddy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cab Sharing Portal",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.6",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.3",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.2",
+    "helmet": "^5.0.2",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.6",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "upper-case": "^2.0.2",
+    "validate-date": "^2.0.0"
   },
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anilpiparaiya/CabBuddy"
+  },
+  "keywords": [],
+  "author": "Anil Piparaiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anilpiparaiya/CabBuddy/issues"
+  },
+  "devDependencies": {
+    "ejs-lint": "^1.2.1"
+  }
 }
