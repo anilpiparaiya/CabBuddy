@@ -1,12 +1,3 @@
-// import express from "express"
-// import path from "path"
-// import expressEjsLayouts from "express-ejs-layouts";
-// import mongoose from "mongoose";
-// import passport from "passport";
-// import flash from "connect-flash"
-// import session from "express-session";
-// import bodyParser from "body-parser";
-// import uc from "upper-case"
 require('dotenv').config()
 const express = require("express");
 const path = require("path");
@@ -42,6 +33,7 @@ app.set("view engine", "ejs");
 
 //User Images making available for other folder
 app.use('/images', express.static('images')); 
+app.use(express.static("public"))
 
 // Express session
 app.use(
@@ -116,6 +108,21 @@ app.use("/driver", driver);
 
 let detail = require("./routes/detail");
 app.use("/detail", detail);
+
+
+// Handle form submission
+app.post('/submit-contact', (req, res) => {
+  const { name, email, message } = req.body;
+  // Process the form data as needed (e.g., send an email, save to a database, etc.)
+  // For now, just log the data
+  console.log('Received contact form submission:');
+  console.log('Name:', name);
+  console.log('Email:', email);
+  console.log('Message:', message);
+
+  res.send('Form submitted successfully!'); // You can redirect or render another page as needed
+});
+
 
 
 app.set("port", process.env.PORT || 3000);

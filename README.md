@@ -1,4 +1,4 @@
-# CabBuddy Cab Sharing Portal
+# CabBuddy (Cab Sharing Web App)
 
 ## Overview
 An efficient real time cab sharing platform for a journey using Node.js, and MongoDB for database
