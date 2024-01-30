@@ -2,7 +2,7 @@
   "name": "CabBuddy",
   "version": "1.0.0",
   "description": "Cab Sharing Portal",
-  "main": "app.js",
+  "main": "index.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.2",
