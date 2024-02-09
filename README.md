@@ -1,15 +1,15 @@
 # CabBuddy (Cab Sharing Web App)
 
 ## Overview
-An efficient real time cab sharing platform for a journey using Node.js, and MongoDB for database
+An efficient real time cab sharing web app for a journey using Node.js, Express and MongoDB for database
 
 ## Features
 - Searching and request-response functionality to find journey partner and driver for a journey
 [Demo of the Portal](https://github.com/anilpiparaiya/CabBuddy/blob/main/demo/demo.md)
 
 ## Getting Started
+
 ### Prerequisites
-- Dependencies that need to be installed before running this project
 - Node.js, Express, EJS, MongoDB, Mongoose, Passport.js middleware, HTTP protocols
 - Backend Development with Node.js and Express
  
